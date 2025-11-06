@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kiten
 Summary:	kiten
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	151795a7c1e4c1fb6b2bba1e1f988abe
+# Source0-md5:	7eabb223b9f1f6380aedb5e0394018dc
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= 5.11.1
@@ -115,7 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kitenkanjibrowser
 %attr(755,root,root) %{_bindir}/kitenradselect
 %ghost %{_libdir}/libkiten.so.6
-%attr(755,root,root) %{_libdir}/libkiten.so.*.*
+%{_libdir}/libkiten.so.*.*
 
 %files data -f %{kaname}.lang
 %defattr(644,root,root,755)
